@@ -92,7 +92,7 @@ export default function Home() {
                   </div>
                   {/* Back */}
                   <div className="flip-card-back absolute w-full h-full bg-[#F7F7F7] flex flex-col items-center justify-center p-[16px] [transform:rotateY(180deg)] backface-hidden">
-                    <div className="text-[24px] text-center font-justmeagain">{card.content}</div>
+                    <div className="text-[20px] text-center font-shadows-into-light">{card.content}</div>
                   </div>
                 </div>
               </div>
