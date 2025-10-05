@@ -24,7 +24,8 @@
 
 @font-face {
   font-family: 'Just Me Again Down Here';
-  src: url('/fonts/justmeagaindownhere.ttf') format('truetype');
+  src: url('/fonts/justmeagaindownhere.woff2') format('woff2'),
+       url('/fonts/justmeagaindownhere.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
