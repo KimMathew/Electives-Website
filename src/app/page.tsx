@@ -1,103 +1,121 @@
+"use client";
+
+import { TABS, CARDS } from "./aboutData";
+import { useState } from "react";
 import Image from "next/image";
 
-export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+const BG_IMAGES = [
+  "/bg1.webp",
+  "/bg2.webp",
+  "/bg3.webp",
+];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+export default function Home() {
+  const [activeTab, setActiveTab] = useState(0);
+
+  return (
+    <div
+      className="min-h-screen flex flex-col items-center justify-center bg-custom-black bg-transition"
+      style={{
+        backgroundImage: `url(${BG_IMAGES[activeTab]})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/30 pointer-events-none z-0" />
+
+      {/* Header */}
+      <header className="absolute top-0 left-0 w-full z-20 flex items-center justify-between px-[128px] py-[24px]">
+        {/* Left: Name */}
+        <div className="font-roboto font-bold text-[1.3rem] text-[#DAE0EDff] drop-shadow-md leading-none">
+          Kim Mathew Bautista
+        </div>
+        {/* Right: Social Icons */}
+        <div className="flex items-center gap-6">
+          <a href="https://www.facebook.com/kimmathewbautista29" target="_blank" rel="noopener noreferrer" className="drop-shadow-lg">
+            <Image src="/facebook.png" alt="Facebook" width={40} height={40} />
           </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kimmathewcbautista@gmail.com" target="_blank" className="drop-shadow-lg">
+            <Image src="/gmail.png" alt="Gmail" width={40} height={40} />
+          </a>
+          <a href="https://www.linkedin.com/in/kim-mathew-bautista/" target="_blank" rel="noopener noreferrer" className="drop-shadow-lg">
+            <Image src="/linkedin.png" alt="LinkedIn" width={44} height={44} />
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      </header>
+
+      {/* Body */}
+      <div className="relative z-10 w-full flex flex-col items-center gap-[32px]">
+        <div className="title flex flex-col justify-center items-center font-bebas text-[10rem] m-0 p-0 leading-[0.85] text-[#DAE0EDff] drop-shadow-lg" >ABOUT ME</div>
+
+        <div
+          className={`tabs-container rounded-[16px] flex gap-[0.5rem] p-[5px] transition-colors duration-300 bg-blur shadow-sm`}
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          {TABS.map((tab, idx) => (
+            <button
+              key={tab.label}
+              onClick={() => setActiveTab(idx)}
+              className={`px-6 py-2 rounded-[10px] font-roboto text-[1rem] transition-all duration-200 ${
+                activeTab === idx
+                  ? "bg-white text-black shadow font-bold"
+                  : "bg-transparent text-white"
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+        
+        <div className="cards-container flex gap-8">
+          {CARDS[activeTab].map((card, idx) => {
+            const cardContent = (
+              <div
+                key={card.title}
+                className="flip-card group w-[280px] h-[330px] p-0 flex flex-col font-roboto text-black text-xl duration-300 transform bg-transparent hover:-translate-y-2 relative"
+              >
+                <div className="flip-card-inner w-full h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                  {/* Front */}
+                  <div className="flip-card-front absolute w-full h-full bg-[#F7F7F7] flex flex-col items-center p-[16px] backface-hidden">
+                    <div className="relative w-full aspect-square flex-shrink-0">
+                      <Image
+                        src={card.image}
+                        alt={card.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 280px) 100vw, 280px"
+                        priority={idx === 0}
+                      />
+                      <div className="absolute inset-0 bg-black/20 pointer-events-none" />
+                    </div>
+                    <div className="text-[20px] font-bold italic text-center mt-4">{card.title}</div>
+                  </div>
+                  {/* Back */}
+                  <div className="flip-card-back absolute w-full h-full bg-[#F7F7F7] flex flex-col items-center justify-center p-[16px] [transform:rotateY(180deg)] backface-hidden">
+                    <div className="text-[24px] text-center font-justmeagain">{card.content}</div>
+                  </div>
+                </div>
+              </div>
+            );
+
+            // Only wrap with <a> if it's a project card with a link
+            if (activeTab === 1 && 'link' in card) {
+              return (
+                <a
+                  key={card.title}
+                  href={card.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="no-underline"
+                >
+                  {cardContent}
+                </a>
+              );
+            }
+            return cardContent;
+          })}
+        </div>
+      </div>
     </div>
   );
 }

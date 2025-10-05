@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 @import "tailwindcss";
 
 :root {
@@ -12,6 +15,20 @@
   --font-mono: var(--font-geist-mono);
 }
 
+@font-face {
+  font-family: 'Apple Garamond';
+  src: url('/fonts/AppleGaramond-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Just Me Again Down Here';
+  src: url('/fonts/justmeagaindownhere.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -24,3 +41,40 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.bg-custom-black {
+  background-color: #010800;
+}
+
+.font-bebas {
+  font-family: 'Bebas Neue', cursive;
+}
+
+.bg-transition {
+  transition: all 0.3s ease;
+}
+
+.bg-blur {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(14px);                  
+  border: 2px solid rgba(255, 255, 255, 0.1);   
+}
+
+.font-roboto {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-apple-garamond-italic {
+  font-family: 'Apple Garamond', serif;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.font-justmeagain {
+  font-family: 'Just Me Again Down Here', cursive;
+}
+
+
+
