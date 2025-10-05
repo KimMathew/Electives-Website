@@ -96,6 +96,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+              
             );
 
             // Only wrap with <a> if it's a project card with a link
