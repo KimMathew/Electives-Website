@@ -67,7 +67,7 @@ export default function Home() {
           ))}
         </div>
         
-        <div className="cards-container flex gap-8">
+        <div key={activeTab} className="cards-container flex gap-8 fade-in-up">
           {CARDS[activeTab].map((card, idx) => {
             const cardContent = (
               <div
