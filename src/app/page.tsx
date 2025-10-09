@@ -56,7 +56,7 @@ export default function Home() {
             <button
               key={tab.label}
               onClick={() => setActiveTab(idx)}
-              className={`px-6 py-2 rounded-[10px] font-roboto text-[1rem] transition-all duration-200 ${
+              className={`px-6 py-2 rounded-[10px] font-roboto text-[0.75rem] transition-all duration-200 sm:text-[1rem] md:text-[1rem] ${
                 activeTab === idx
                   ? "bg-white text-black shadow font-bold"
                   : "bg-transparent text-white"
