@@ -3,6 +3,7 @@
 import { TABS, CARDS } from "./aboutData";
 import { useState } from "react";
 import Image from "next/image";
+import { FaSquareFacebook, FaSquareGithub, FaLinkedin } from "react-icons/fa6";
 
 const BG_IMAGES = [
   "/bg1.webp",
@@ -34,13 +35,13 @@ export default function Home() {
         {/* Right: Social Icons */}
         <div className="flex items-center gap-6">
           <a href="https://www.facebook.com/kimmathewbautista29" target="_blank" rel="noopener noreferrer" className="drop-shadow-lg">
-            <Image src="/facebook.png" alt="Facebook" width={40} height={40} className="w-7 h-7 sm:w-10 sm:h-10" />
+            <FaSquareFacebook size={38} color="white" className="w-6 h-6 sm:w-8.5 sm:h-8.5" />
           </a>
           <a href="https://github.com/KimMathew" target="_blank" className="drop-shadow-lg">
-            <Image src="/github.png" alt="Github" width={40} height={40} className="w-6 h-6 sm:w-8.5 sm:h-8.5" />
+            <FaSquareGithub size={38} color="white" className="w-6 h-6 sm:w-8.5 sm:h-8.5" />
           </a>
           <a href="https://www.linkedin.com/in/kim-mathew-bautista/" target="_blank" rel="noopener noreferrer" className="drop-shadow-lg">
-            <Image src="/linkedin.png" alt="LinkedIn" width={44} height={44} className="w-8 h-8 sm:w-11 sm:h-11" />
+            <FaLinkedin size={38} color="white" className="w-6 h-6 sm:w-8.5 sm:h-8.5" />
           </a>
         </div>
       </header>
