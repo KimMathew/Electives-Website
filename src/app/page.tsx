@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <div
-      className="min-h-screen bg-custom-black bg-transition"
+      className="min-h-screen bg-custom-black bg-transition flex flex-col"
       style={{
         backgroundImage: `url(${BG_IMAGES[activeTab]})`,
         backgroundSize: "cover",
@@ -46,7 +46,7 @@ export default function Home() {
         </div>
       </header>
 
-      <div className=" flex flex-col items-center justify-center pb-[24px]">
+      <div className="flex-1 flex flex-col items-center justify-center pb-[24px]">
         {/* Body */}
         <div className="relative z-10 w-full flex flex-col items-center gap-[32px]">
           <div className="title flex flex-col justify-center items-center font-bebas text-[8rem] sm:text-[9rem] md:text-[10rem] m-0 p-0 leading-[0.85] text-[#DAE0EDff] drop-shadow-lg" >ABOUT ME</div>
@@ -78,7 +78,11 @@ export default function Home() {
                 >
                   <div className="flip-card-inner w-full h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                     {/* Front */}
-                    <div className="flip-card-front absolute w-full h-full bg-[#F7F7F7] flex flex-col items-center p-[16px] backface-hidden">
+                    <div className="flip-card-front absolute w-full h-full bg-[#f8f7f4] flex flex-col items-center p-[16px] backface-hidden"
+                    style={{
+                      backgroundImage: 'url("https://www.transparenttextures.com/patterns/paper-fibers.png")',
+                    }}
+                    >
                       <div className="relative w-full aspect-square flex-shrink-0">
                         <Image
                           src={card.image}
@@ -93,7 +97,11 @@ export default function Home() {
                       <div className="text-[20px] font-bold italic text-center mt-4">{card.title}</div>
                     </div>
                     {/* Back */}
-                    <div className="flip-card-back absolute w-full h-full bg-[#F7F7F7] flex flex-col items-center justify-center p-[16px] [transform:rotateY(180deg)] backface-hidden">
+                    <div className="flip-card-back absolute w-full h-full bg-[#f8f7f4] flex flex-col items-center justify-center p-[16px] [transform:rotateY(180deg)] backface-hidden"
+                    style={{
+                      backgroundImage: 'url("https://www.transparenttextures.com/patterns/paper-fibers.png")',
+                    }}
+                    >
                       <div className="text-[20px] text-center font-shadows-into-light">{card.content}</div>
                     </div>
                   </div>
