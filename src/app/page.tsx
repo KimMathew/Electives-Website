@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <div
-      className="min-h-screen bg-custom-black bg-transition flex flex-col"
+      className="min-h-screen bg-custom-black bg-transition flex flex-col relative"
       style={{
         backgroundImage: `url(${BG_IMAGES[activeTab]})`,
         backgroundSize: "cover",
@@ -24,7 +24,7 @@ export default function Home() {
       }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/30 pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-black/30 pointer-events-none z-0 h-full w-full" />
 
       {/* Header */}
       <header className="w-full flex items-center justify-between px-[32px] sm:px-[112px] md:px-[128px] py-[24px] bg-transparent">
@@ -46,7 +46,7 @@ export default function Home() {
         </div>
       </header>
 
-      <div className="flex-1 flex flex-col items-center justify-center pb-[24px]">
+      <div className="flex-1 flex flex-col items-center justify-center pb-[24px] px-[24px]">
         {/* Body */}
         <div className="relative z-10 w-full flex flex-col items-center gap-[32px]">
           <div className="title flex flex-col justify-center items-center font-bebas text-[8rem] sm:text-[9rem] md:text-[10rem] m-0 p-0 leading-[0.85] text-[#DAE0EDff] drop-shadow-lg" >ABOUT ME</div>
@@ -69,7 +69,7 @@ export default function Home() {
             ))}
           </div>
           
-          <div key={activeTab} className="cards-container flex flex-col md:flex-row gap-8 fade-in-up items-center md:items-stretch justify-center w-full max-w-5xl">
+          <div key={activeTab} className="cards-container flex flex-wrap justify-center gap-8 fade-in-up">
             {CARDS[activeTab].map((card, idx) => {
               const cardContent = (
                 <div
