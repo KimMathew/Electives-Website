@@ -1,6 +1,7 @@
 "use client";
 
 import { TABS, CARDS } from "./aboutData";
+import TrueFocus from "./TrueFocus";
 import { useState } from "react";
 import Image from "next/image";
 import { FaSquareFacebook, FaSquareGithub, FaLinkedin } from "react-icons/fa6";
@@ -56,7 +57,16 @@ export default function Home() {
       <div className="flex-1 flex flex-col items-center justify-center pb-[24px] px-[24px]">
         {/* Body */}
         <div className="relative z-10 w-full flex flex-col items-center gap-[32px]">
-          <div className="title flex flex-col justify-center items-center font-bebas text-[8rem] sm:text-[9rem] md:text-[10rem] m-0 p-0 leading-[0.85] text-[#DAE0EDff] drop-shadow-lg" >ABOUT ME</div>
+          <h1 className="flex flex-col justify-center items-center">
+            <TrueFocus
+              sentence="ABOUT ME"
+              manualMode={false}
+              blurAmount={5}
+              borderColor="red"
+              animationDuration={2}
+              pauseBetweenAnimations={2}
+            />
+          </h1>
 
           <div
             className={`tabs-container rounded-[16px] flex gap-[0.5rem] p-[5px] transition-colors duration-300 bg-blur shadow-sm`}
